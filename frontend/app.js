@@ -14,10 +14,11 @@ form.addEventListener("submit", async (event) => {
     if (data.error) {
       weatherDiv.innerHTML = `<p>${data.error}</p>`;
     } else {
-      weatherDiv.innerHTML = `
+      weatherDiv.innerHTML += `
+       <h1 class="text-6xl font-bold">${city}</h1>
         <p>Temperature: ${data.temperature} °C</p>
         <p>Description: ${data.description}</p>
-        <img src="http://openweathermap.org/img/w/${data.icon}.png" alt="Weather Icon" />
+        <img class="w-96 h-96 mx-auto" src="http://openweathermap.org/img/w/${data.icon}.png" alt="Weather Icon" />
       `;
     }
   } catch (err) {
