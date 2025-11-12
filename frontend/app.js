@@ -6,7 +6,9 @@ form.addEventListener("submit", async (event) => {
   const city = form.elements.city.value;
 
   try {
-    const response = await fetch(`http://localhost:3000/weather?city=${city}`);
+    const response = await fetch(
+      `https://lab-08-weather.onrender.com/weather?city=${city}`
+    );
     const data = await response.json();
 
     if (data.error) {
